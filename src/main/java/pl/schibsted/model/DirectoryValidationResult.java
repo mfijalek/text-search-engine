@@ -2,7 +2,7 @@ package pl.schibsted.model;
 
 public class DirectoryValidationResult {
 
-	private String errorMessage;
+	private final String errorMessage;
 
 	public DirectoryValidationResult(String errorMessage) {
 		this.errorMessage = errorMessage;
