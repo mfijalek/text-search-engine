@@ -29,10 +29,11 @@ import pl.schibsted.textsearch.algorithm.TextSearchAlgorithm;
 
 class SearchEngineServiceTest {
 
-	public static final String SINGLE_LINE_TXT = "singleLine.txt";
-	public static final int COUNT_OF_MATCHES = 1;
+	private static final String SINGLE_LINE_TXT = "singleLine.txt";
+	private static final int COUNT_OF_MATCHES = 1;
 	private static final String EMPTY_DICTIONARY_PATH = "empty";
 	private static final String CORRECT_DICTIONARY_PATH = "correct";
+
 	private OutputService outputService;
 	private TextSearchAlgorithm textSearchAlgorithm;
 

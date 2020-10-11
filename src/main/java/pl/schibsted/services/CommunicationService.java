@@ -40,18 +40,18 @@ public class CommunicationService {
 		}
 	}
 
-	private void executeSearchAndPrintReport(SearchPhrase searchPhrase) {
+	void executeSearchAndPrintReport(SearchPhrase searchPhrase) {
 		final SearchEngineResponse searchEngineResponse = executeSearch(searchPhrase);
 		final SearchReport searchReport = reportService.prepareReport(searchEngineResponse, searchPhrase);
 		outputService.println(searchReport);
 	}
 
-	private SearchEngineResponse executeSearch(SearchPhrase searchPhrase) {
+	SearchEngineResponse executeSearch(SearchPhrase searchPhrase) {
 		final SearchEngineRequest searchRequest = new SearchEngineRequest(searchPhrase.getUniqueWords(), directoryService.getTextFiles());
 		return searchEngineService.search(searchRequest);
 	}
 
-	private boolean validateInputData() {
+	boolean validateInputData() {
 		final Set<DirectoryValidationResult> validationResults = directoryService.validate();
 		if (validationResults.size() > 0) {
 			outputService.printValidationErrors(validationResults);
@@ -60,7 +60,7 @@ public class CommunicationService {
 		return false;
 	}
 
-	public SearchPhrase inputSearchPhrase(Scanner scanner) {
+	SearchPhrase inputSearchPhrase(Scanner scanner) {
 		outputService.printInputPrefix();
 		return new SearchPhrase(scanner.nextLine());
 	}

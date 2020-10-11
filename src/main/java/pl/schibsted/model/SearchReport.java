@@ -13,6 +13,10 @@ public class SearchReport {
 		this.reports = Collections.unmodifiableSet(reports);
 	}
 
+	public final Set<SearchFileReport> getReports() {
+		return reports;
+	}
+
 	@Override
 	public String toString() {
 		return reports.stream()

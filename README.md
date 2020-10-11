@@ -42,3 +42,7 @@ Now, to calculate rank we used percentage how many words from phrase is present 
 
 There is possibility to write another rank algorithm by implementing the interface.
 We can combine just implemented solution with more complicated solutions to find more accurate rank.
+
+### Performance
+
+In the future versions, there is possibility to add multi thread processing of text search, each file per thread. Model object are fully immutable and prepared for operations on threads.
